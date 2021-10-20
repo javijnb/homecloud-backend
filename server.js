@@ -13,7 +13,7 @@ app.get("/", (req, res)=> {res.send("Nuño Drive")});
 // app.use("/upload", uploadRouter);
 // app.use("/download", downloadRouter);
 // app.use("/path", pathRouter);
-// app.use("/content", contentRouter);
+app.use("/content", contentRouter);
 
 // Start server
 app.listen(port, ()=>{
