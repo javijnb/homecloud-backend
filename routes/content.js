@@ -1,12 +1,12 @@
 const express = require("express");
 const router = express.Router();
 const fs = require('fs');
+const pathTranslator = require("../utils/path-translator");
 
 router.get('/:path?', async (req, res, next)=>{
 
     try{
-        const requestedPath = req.params.path;
-        const translatedPath = translatePath(requestedPath);
+        const translatedPath = pathTranslator(req.params.path);
         const dir = await fs.promises.opendir(translatedPath);
         const content = {files: [], directories: []};
 
@@ -22,10 +22,13 @@ router.get('/:path?', async (req, res, next)=>{
         content.files.sort();
 
         res.json({
-            path: requestedPath,
+            path: translatedPath,
             content,
             success: true
         });
+
+        console.log("<CONTENT>: Requested path: ", translatedPath);
+
     }
 
     catch(err){
@@ -34,8 +37,5 @@ router.get('/:path?', async (req, res, next)=>{
 
 });
 
-function translatePath(requestedPath){
-    return requestedPath.replace(/:/g, "/");
-}
 
 module.exports = router;

@@ -1,19 +1,28 @@
 const express = require('express');
-const app = express();
-const port = 9000;
+const bodyParser = require('body-parser');
 
 // Lógica de rutas
 const uploadRouter = require("./routes/upload");
 const downloadRouter = require("./routes/download");
-const pathRouter = require("./routes/path");
+const dirRouter = require("./routes/dir");
 const contentRouter = require("./routes/content");
 
-// Routes
+// Inicialización
+const app = express();
+const port = 9000;
+
+// Parsers
+var jsonParser = bodyParser.json();
+// var urlencodedParser = bodyParser.urlencoded({extended: false});
+app.use(bodyParser.json());
+
+// Rutas
 app.get("/", (req, res)=> {res.send("Nuño Drive")});
 // app.use("/upload", uploadRouter);
 // app.use("/download", downloadRouter);
-// app.use("/path", pathRouter);
+app.use("/dir", dirRouter);
 app.use("/content", contentRouter);
+
 
 // Start server
 app.listen(port, ()=>{
