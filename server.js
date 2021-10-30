@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 // Rutas
 app.get("/", (req, res)=> {res.send("Nuño Drive")});
 // app.use("/upload", uploadRouter);
-// app.use("/download", downloadRouter);
+app.use("/download", downloadRouter);
 app.use("/dir", dirRouter);
 app.use("/content", contentRouter);
 
