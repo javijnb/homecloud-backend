@@ -1,4 +1,4 @@
-# HOMECLOUD by NUÑO
+# HOMECLOUD
 ## INVOCACIÓN:
 Desde la carpeta raíz:
 
