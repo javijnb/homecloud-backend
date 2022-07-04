@@ -15,7 +15,6 @@ router.get('/:path?', async (req, res, next) => {
   }
 
   const absolutePath = dirPath + "/" + fileToDownload;
-  console.log("File path: ", absolutePath);
 
    try {
      
