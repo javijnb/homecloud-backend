@@ -1,0 +1,163 @@
+{
+	"info": {
+		"_postman_id": "be4c3b1f-21f2-4b19-a871-5ced857b3037",
+		"name": "HOMECLOUD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Content",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9000/content/:home:javijnb:Escritorio:",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"content",
+						":home:javijnb:Escritorio:"
+					],
+					"variable": [
+						{
+							"key": "home:javijnb:Escritorio:",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DIR",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"test\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/dir/:home:javijnb:Escritorio",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"dir",
+						":home:javijnb:Escritorio"
+					],
+					"variable": [
+						{
+							"key": "home:javijnb:Escritorio",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Download",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"TO-DO.txt\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/download/:home:javijnb:Escritorio",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"download",
+						":home:javijnb:Escritorio"
+					],
+					"variable": [
+						{
+							"key": "home:javijnb:Escritorio",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/javijnb/Descargas/guts.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:9000/upload/:home:javijnb:Escritorio:",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"upload",
+						":home:javijnb:Escritorio:"
+					],
+					"variable": [
+						{
+							"key": "home:javijnb:Escritorio:",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
