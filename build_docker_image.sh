@@ -1,0 +1,1 @@
+docker build -t homecloud/backend -f docker/Dockerfile .
