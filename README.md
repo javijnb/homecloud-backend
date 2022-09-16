@@ -15,7 +15,7 @@ Este repositorio contiene toda la infraestructura perteneciente al backend del p
 ## <a name="configuration">Configuración</a>
 
 Lista de directorios
-- **docker**: contiene los ficheros para crear la imagen Docker del backend así como el fichero docker-compose.
+- **docker**: contiene los ficheros para crear la imagen Docker del backend así como el fichero .dockerignore para indicar qué carpetas o ficheros no deben ser incluidos en la imagen.
 - **postman**: contiene las peticiones HTTP en formato JSON para probar la API del backend en Postman.
 - **node_modules**: contiene los paquetes NPM que necesita este proyecto de NodeJS
 - **routes**: contiene los ficheros JS que llevan a cabo cada una de las funcionalidades de la API:
